@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint . --cache --fix --ext .ts,.tsx",
+    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
+    "posttest": "npm run format",
+    "pretest": "npm run lint:css && npm run lint",
+    "lint:css": "stylelint '**/*.*css' --fix"
   },
   "dependencies": {
     "next": "12.3.1",
@@ -17,8 +21,21 @@
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
-    "typescript": "4.8.4"
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": ">=2",
+    "sass": "^1.55.0",
+    "stylelint": "^14.13.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^28.0.0",
+    "stylelint-declaration-strict-value": "^1.9.0",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.3.0",
+    "typescript": "4.8.4",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }

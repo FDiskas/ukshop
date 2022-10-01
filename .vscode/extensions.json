@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "stuartzhang.stylelint-stzhang",
+    "bradlc.vscode-tailwindcss",
+    "yanai101.css-var-hint",
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.format.enable": true,
+  "stylelint.enable": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "search.exclude": {
+    "**/*.next": true
+  },
+  "files.watcherExclude": {
+    "**/.next/*/**": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "eslint.alwaysShowStatus": true,
+  "stylelint.autoFix": true,
+  "editor.formatOnSave": true,
+}
