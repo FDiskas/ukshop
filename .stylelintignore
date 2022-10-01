@@ -1,3 +1,7 @@
 build/
 *.tsx
+*.ts
+*.js
+*.md
 src/__mocks__/**/*
+node_modules/

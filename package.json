@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --cache --fix --ext .ts,.tsx",
+    "lint": "tsc --noEmit && yarn lint:js && yarn lint:css",
+    "lint:js": "eslint . --cache --fix --ext .ts,.tsx",
     "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
     "posttest": "npm run format",
     "pretest": "npm run lint:css && npm run lint",
-    "lint:css": "stylelint '**/*.*css' --fix"
+    "lint:css": "stylelint '**/*.*css' --fix",
+    "prepare": "yarn openapi-typescript https://app.swaggerhub.com/apiproxy/registry/I425/ReactJS/1.0.0 --prettier-config --output src/api/types/Api.d.ts && prettier src/api/types/Api.d.ts --write"
   },
   "dependencies": {
     "next": "12.3.1",
@@ -23,10 +25,13 @@
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
+    "autoprefixer": "^10.4.12",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "openapi-typescript": "^5.4.1",
+    "postcss": "^8.4.17",
     "prettier": ">=2",
     "sass": "^1.55.0",
     "stylelint": "^14.13.0",
@@ -35,6 +40,7 @@
     "stylelint-declaration-strict-value": "^1.9.0",
     "stylelint-prettier": "^2.0.0",
     "stylelint-scss": "^4.3.0",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.8.4",
     "typescript-plugin-css-modules": "^3.4.0"
   }
