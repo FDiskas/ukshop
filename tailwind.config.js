@@ -4,12 +4,7 @@ module.exports = {
         removeDeprecatedGapUtilities: true,
         purgeLayersByDefault: true,
     },
-    purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx}"],
-
-    content: [
-        "./pages/**/*.{js,ts,jsx,tsx}",
-        "./components/**/*.{js,ts,jsx,tsx}",
-    ],
+    content: ['./public/**/*.html', 'src/pages/**/*.{js,ts,jsx,tsx}', 'src/components/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {},
     },

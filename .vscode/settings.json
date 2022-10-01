@@ -17,4 +17,5 @@
   "eslint.alwaysShowStatus": true,
   "stylelint.autoFix": true,
   "editor.formatOnSave": true,
+  "cSpell.language": "en-GB"
 }
