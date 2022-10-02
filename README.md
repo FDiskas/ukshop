@@ -14,5 +14,4 @@ The following improvements was done on top of pure nextjs
 1. Configured tailwind css
 1. Automatically fetch API type definitions from swagger
 
-
-> This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and added some candies :) 
+> This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and added some candies :)

@@ -4,4 +4,5 @@ node_modules/
 tailwind.config.js
 postcss.config.js
 styleguide.config.js
+next.config.js
 coverage/*

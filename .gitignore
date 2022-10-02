@@ -35,5 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .eslintcache
-src/api/types/Api.d.ts
+src/types/Api.d.ts
 coverage/
