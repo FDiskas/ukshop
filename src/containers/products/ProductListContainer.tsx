@@ -1,4 +1,4 @@
-import { ProductItemComponent } from 'src/components/product/ProductItemComponent';
+import { ProductListItemComponent } from 'src/components/product/ProductListItemComponent';
 
 const demoData = [
     {
@@ -19,10 +19,11 @@ export const ProductListContainer = () => {
     return (
         <>
             {demoData.map((product) => (
-                <ProductItemComponent
+                <ProductListItemComponent
                     name={product.name}
                     image={product.image}
                     price={product.price}
+                    id={product.id}
                     key={product.id}
                 />
             ))}

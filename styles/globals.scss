@@ -18,6 +18,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: var(--font-family, #{$fontFamily});
+    font-weight: 300;
+    font-size: 18px;
 }
 
 a {

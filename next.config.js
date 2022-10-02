@@ -2,6 +2,8 @@
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
+    cleanDistDir: true,
+    poweredByHeader: false,
     images: {
         domains: ['upload.wikimedia.org', 'images.unsplash.com'],
     },

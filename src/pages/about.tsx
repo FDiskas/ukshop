@@ -3,7 +3,7 @@ import { EmptyLayout } from 'src/layouts/EmptyLaout';
 
 import type { NextPage } from 'next';
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
     return (
         <EmptyLayout>
             <AboutContainer />
@@ -11,4 +11,4 @@ const Home: NextPage = () => {
     );
 };
 
-export default Home;
+export default About;

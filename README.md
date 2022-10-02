@@ -15,3 +15,17 @@ The following improvements was done on top of pure nextjs
 1. Automatically fetch API type definitions from swagger
 
 > This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and added some candies :)
+
+## How to
+
+**Requirements:** Node and yarn
+
+1. `yarn` to install dependencies
+1. `yarn lint` check if all required modules is installed and code has no issues
+1. `yarn dev` to start local development
+
+**Production**
+
+1. `yarn` install dependencies
+1. `yarn build` to build production ready bundle
+1. `yarn start` start the node server

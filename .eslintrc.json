@@ -31,6 +31,11 @@
       }
     }
   },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
   "rules": {
     "prettier/prettier": "error",
     "import/prefer-default-export": "off",
