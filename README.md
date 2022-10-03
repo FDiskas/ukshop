@@ -11,14 +11,17 @@ The following improvements was done on top of pure nextjs
 1. Integrated prettier with eslint
 1. Integrated prettier with stylelint
 1. Configured nextjs to understand scss
+1. Configured typescript to understand css modules
 1. Configured tailwind css
-1. Automatically fetch API type definitions from swagger
+1. Automatically fetch API type definitions from swagger after installing node modules
 
 > This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and added some candies :)
 
 ## How to
 
 **Requirements:** Node and yarn
+
+**Development**
 
 1. `yarn` to install dependencies
 1. `yarn lint` check if all required modules is installed and code has no issues
