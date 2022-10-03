@@ -6,6 +6,12 @@ module.exports = {
         purgeLayersByDefault: true,
     },
     content: ['./public/**/*.html', 'src/**/*.{js,ts,jsx,tsx}'],
-    theme: {},
+    theme: {
+        extend: {
+            colors: {
+                brand: 'var(--primary-color)',
+            },
+        },
+    },
     plugins: [],
 };

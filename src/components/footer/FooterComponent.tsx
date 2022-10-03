@@ -8,7 +8,7 @@ export const FooterComponent = () => {
                     <div className="flex w-full lg:w-1/2 ">
                         <div className="px-3 md:px-0">
                             <h3 className="font-bold text-gray-900">© 2022</h3>
-                            <p className="py-4">
+                            <p className="py-4 text-sm font-extralight">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus
                                 commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia.
                             </p>

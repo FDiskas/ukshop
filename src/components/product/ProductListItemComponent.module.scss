@@ -1,0 +1,6 @@
+.productItem {
+    &:hover .productButton {
+        opacity: 1;
+        transition: opacity 400ms 0ms;
+    }
+}

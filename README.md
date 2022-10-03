@@ -26,6 +26,6 @@ The following improvements was done on top of pure nextjs
 
 **Production**
 
-1. `yarn` install dependencies
+1. `yarn install --frozen-lockfile` install dependencies
 1. `yarn build` to build production ready bundle
 1. `yarn start` start the node server

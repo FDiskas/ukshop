@@ -38,6 +38,10 @@
   },
   "rules": {
     "prettier/prettier": "error",
+    // Typescript will handle undefined variables
+    "no-undef": "off",
+    "no-unused-vars": "off",
+
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
     "import/export": "off",
@@ -66,6 +70,7 @@
         ],
         "pathGroupsExcludedImportTypes": []
       }
-    ]
+    ],
+    "no-console": "error"
   }
 }
