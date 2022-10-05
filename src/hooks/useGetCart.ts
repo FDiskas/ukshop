@@ -1,12 +1,16 @@
 import useSWR from 'swr';
 
 import { paths } from 'src/types/Api';
+import { buildLink } from 'src/libs/builder';
+import { parameters } from 'src/parameters';
 
 type ApiTypes = paths['/cart']['get'];
 type Response = ApiTypes['responses']['200']['schema'];
 
 export const useGetCart = (fallbackData?: Response) => {
-    const { data, error } = useSWR<Response>(`/cart`, {
+    const apiEndpoint = buildLink(parameters.api.endpoints['cart.get']);
+
+    const { data, error } = useSWR<Response>(apiEndpoint, {
         fallbackData,
     });
 

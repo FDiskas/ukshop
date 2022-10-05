@@ -1,7 +1,7 @@
-import { MainLayout } from '../layouts/MainLayout';
-import { ProductListContainer } from 'src/containers/products/ProductListContainer';
-
 import type { NextPage } from 'next';
+
+import { ProductListContainer } from 'src/containers/products/ProductListContainer';
+import { MainLayout } from 'src/layouts/MainLayout';
 
 export const Home: NextPage = () => {
     return (

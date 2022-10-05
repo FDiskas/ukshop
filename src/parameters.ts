@@ -3,6 +3,11 @@ export const parameters = {
         endpoints: {
             'product.items': '/items',
             'product.item': '/items/[id]',
+            'cart.get': '/cart',
+            'cart.delete': '/cart',
+            'cart.item.delete': '/cart/[itemId]',
+            'cart.item.add': '/cart',
+            'cart.item.update': '/cart/[itemId]',
         },
     },
     pages: {

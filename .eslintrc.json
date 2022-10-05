@@ -58,7 +58,12 @@
             "position": "before"
           },
           {
-            "pattern": "@anymove/**",
+            "pattern": "next**",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "src/**",
             "group": "internal",
             "position": "after"
           }

@@ -17,7 +17,7 @@ export const buildQuery = (query: Url['query']) => {
     return resolvedAs;
 };
 
-export const buildLink = (link: string, query: Url['query']) => {
+export const buildLink = (link: string, query?: Url['query']) => {
     const apiEndpoint = {
         pathname: link,
         query,

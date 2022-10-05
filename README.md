@@ -19,7 +19,7 @@ The following improvements was done on top of pure nextjs
 
 ## How to
 
-**Requirements:** Node and yarn
+**Requirements:** Node and yarn (works with bunjs also)
 
 **Development**
 

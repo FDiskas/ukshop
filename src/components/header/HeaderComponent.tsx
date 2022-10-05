@@ -53,9 +53,11 @@ export const HeaderComponent = () => {
                         <UserIcon className="fill-current hover:text-black" width={24} height={24} />
                     </a>
 
-                    <a className="pl-3 inline-block no-underline hover:text-black" href="#">
-                        <BasketIcon className="fill-current hover:text-black" width={24} height={24} />
-                    </a>
+                    <Link href="/cart">
+                        <a className="pl-3 inline-block no-underline hover:text-black">
+                            <BasketIcon className="fill-current hover:text-black" width={24} height={24} />
+                        </a>
+                    </Link>
                 </div>
             </div>
         </nav>

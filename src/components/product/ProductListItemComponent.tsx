@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import HeartIcon from 'public/icons/heart.svg';
+
 import { ProductPriceComponent } from 'src/components/product/ProductPriceComponent';
 import { parameters } from 'src/parameters';
 import { ButtonComponent } from 'src/components/button/ButtonComponent';
