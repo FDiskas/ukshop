@@ -11,7 +11,7 @@ interface Props {
 }
 export const ButtonComponent: React.FC<Props> = ({ children }) => {
     return (
-        <button className="w-1/2 max-w-sm mx-auto flex items-center justify-center bg-brand outline-none hover:opacity-90 text-white font-extrabold py-3 px-5 rounded shadow-lg">
+        <button className="max-w-sm mx-auto flex items-center justify-center bg-brand outline-none hover:opacity-90 text-white font-extrabold py-3 px-5 rounded shadow-lg">
             {children}
         </button>
     );

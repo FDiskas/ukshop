@@ -12,7 +12,7 @@ export const EmptyLayout: React.FC<Props> = ({ children }) => {
         <React.Fragment>
             <HeaderComponent />
 
-            <section className="bg-white py-8">{children}</section>
+            <section className="py-8 mt-16 md:mt-0">{children}</section>
 
             <FooterComponent />
         </React.Fragment>

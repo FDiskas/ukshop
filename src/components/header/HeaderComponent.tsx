@@ -7,8 +7,8 @@ import BurgerIcon from 'public/icons/burger.svg';
 
 export const HeaderComponent = () => {
     return (
-        <nav id="header" className="w-full z-30 top-0 py-1">
-            <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+        <nav id="header" className="w-full z-30 top-0 left-0 right-0 fixed md:relative md:p-y1">
+            <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3 shadow-md md:shadow-none">
                 <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
                     <BurgerIcon className="fill-current text-gray-900" width={20} height={20} />
                 </label>
@@ -39,13 +39,12 @@ export const HeaderComponent = () => {
                 </div>
 
                 <div className="order-1 md:order-2">
-                    <a
-                        className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl "
-                        href="#"
-                    >
-                        <LogoIcon className="fill-current text-gray-800 mr-2" width={24} height={24} />
-                        UKSHOP
-                    </a>
+                    <Link href="/">
+                        <a className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl ">
+                            <LogoIcon className="fill-current text-gray-800 mr-2" width={24} height={24} />
+                            UKSHOP
+                        </a>
+                    </Link>
                 </div>
 
                 <div className="order-2 md:order-3 flex items-center" id="nav-content">

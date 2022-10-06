@@ -10,6 +10,7 @@
         --primary-color: #{$royalBlue};
         --secondary-color: #000;
         --font-family: #{$fontFamily};
+        --body-color: #{$lightGrey};
     }
 }
 
@@ -26,6 +27,7 @@ body {
     font-family: var(--font-family, #{$fontFamily});
     font-weight: 300;
     font-size: 18px;
+    background-color: var(--body-color, #{$lightGrey});
 }
 
 a {
@@ -49,4 +51,8 @@ a {
 
 .hover\:grow:hover {
     transform: scale(1.1);
+}
+
+.container {
+    @apply bg-white border-solid border-slate-100 border-2 rounded-lg;
 }

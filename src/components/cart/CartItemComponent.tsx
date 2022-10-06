@@ -1,10 +1,12 @@
 import * as React from 'react';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { NumberInputComponent } from 'src/components/input/NumberInputComponent';
 import { definitions } from 'src/types/Api';
 import { ProductPriceComponent } from 'src/components/product/ProductPriceComponent';
+import { parameters } from 'src/parameters';
 
 type ItemId = definitions['CartItem']['item_id'];
 type Quantity = definitions['CartItem']['quantity'];
@@ -32,7 +34,7 @@ export const CartItemComponent: React.FC<Props> = ({ data, onChange, onRemove })
 
     return (
         <div className="flex flex-row items-center gap-5 border-b-2">
-            <div>
+            <div className="hidden md:block">
                 {data.image != null && (
                     <Image
                         src={data.image}
@@ -44,7 +46,11 @@ export const CartItemComponent: React.FC<Props> = ({ data, onChange, onRemove })
                     />
                 )}
             </div>
-            <div className="flex-1">{data.name}</div>
+            <div className="flex-1">
+                <Link href={{ pathname: parameters.pages.product, query: { id: data.item_id?.toString() } }}>
+                    <a>{data.name}</a>
+                </Link>
+            </div>
             <div className="w-24">
                 <NumberInputComponent value={data.quantity} onChange={handleChange} />
             </div>

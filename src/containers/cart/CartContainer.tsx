@@ -35,7 +35,7 @@ export const CartContainer: React.FC<Props> = ({ data }) => {
     return (
         <div className="container py-8 px-6 mx-auto font-normal">
             <div className="flex flex-row items-center gap-5 border-b-2 mb-3">
-                <div className="w-44">Image</div>
+                <div className="w-44 hidden md:block">Image</div>
                 <div className="flex-1">Name</div>
                 <div className="w-16">Quantity</div>
                 <div className="w-24">Price</div>
@@ -46,6 +46,7 @@ export const CartContainer: React.FC<Props> = ({ data }) => {
                     <CartItemComponent key={item.item_id} data={item} onRemove={handleRemove} onChange={handleChange} />
                 ))}
             </div>
+            <div className="">Total</div>
         </div>
     );
 };

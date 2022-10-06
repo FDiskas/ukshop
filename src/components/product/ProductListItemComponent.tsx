@@ -33,22 +33,25 @@ export const ProductListItemComponent: React.FC<Props> = ({
 }) => {
     const className =
         variant === ProductListItemComponentVariant.Small
-            ? 'w-full md:w-1/3 xl:w-1/4 flex flex-col m-5'
+            ? 'w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 flex flex-col'
             : 'w-full flex flex-col';
 
     return (
         <div className={className}>
             <Link href={{ pathname: parameters.pages.product, query: { id } }}>
-                <a className={`hover:shadow-lg p-5 justify-center flex-col flex  ${styles.productItem}`}>
-                    <div className={`relative`}>
-                        <Image
-                            src={image}
-                            alt={name}
-                            width={400}
-                            height={400}
-                            objectFit="cover"
-                            className="hover:grow"
-                        />
+                <a className={`hover:shadow-lg rounded p-5 justify-center block ${styles.productItem}`}>
+                    <div className={`relative m-auto`}>
+                        <div className="overflow-hidden rounded-lg">
+                            <Image
+                                src={image}
+                                alt={name}
+                                width={300}
+                                height={300}
+                                objectFit="cover"
+                                layout="responsive"
+                                className="hover:grow !block"
+                            />
+                        </div>
                         <div className={`absolute bottom-5 left-0 right-0 opacity-0 ${styles.productButton}`}>
                             <ButtonComponent>Add to cart</ButtonComponent>
                         </div>
