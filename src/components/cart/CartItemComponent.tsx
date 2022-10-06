@@ -3,6 +3,8 @@ import * as React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import TrashIcon from 'public/icons/trash.svg';
+
 import { NumberInputComponent } from 'src/components/input/NumberInputComponent';
 import { definitions } from 'src/types/Api';
 import { ProductPriceComponent } from 'src/components/product/ProductPriceComponent';
@@ -27,13 +29,13 @@ export const CartItemComponent: React.FC<Props> = ({ data, onChange, onRemove })
     );
 
     const handleRemove = React.useCallback(() => {
-        if (onRemove && data.item_id) {
+        if (onRemove && data.item_id && confirm('Are you sure?')) {
             onRemove(data.item_id);
         }
     }, [data.item_id, onRemove]);
 
     return (
-        <div className="flex flex-row items-center gap-5 border-b-2">
+        <div className="flex flex-row items-center gap-5 border-b py-6">
             <div className="hidden md:block">
                 {data.image != null && (
                     <Image
@@ -58,8 +60,10 @@ export const CartItemComponent: React.FC<Props> = ({ data, onChange, onRemove })
                 <ProductPriceComponent price={data.price} />
             </div>
             <div>
-                <button data-action="increment" className="h-10 w-10 rounded cursor-pointer" onClick={handleRemove}>
-                    <span className="m-auto text-2xl font-thin">❌</span>
+                <button className="h-10 w-10 rounded cursor-pointer" onClick={handleRemove}>
+                    <span className="m-auto text-2xl font-thin">
+                        <TrashIcon className="text-brand w-4 h-4" />
+                    </span>
                 </button>
             </div>
         </div>

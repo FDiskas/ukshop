@@ -37,7 +37,7 @@ type PageParams = {
     id: string;
 };
 
-export const getServerSideProps: GetServerSideProps<PageProps, PageParams> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<PageProps, PageParams> = async ({ params, req }) => {
     const id = parseInt(params?.id ?? '0');
 
     if (isNaN(id)) {
@@ -49,7 +49,7 @@ export const getServerSideProps: GetServerSideProps<PageProps, PageParams> = asy
     const apiEndpoint = buildLink(parameters.api.endpoints['product.item'], { id: id.toString() });
 
     try {
-        const data = await fetcher<definitions['ItemDetail']>(apiEndpoint);
+        const data = await fetcher<definitions['ItemDetail']>(apiEndpoint, undefined, req);
         return { props: { fallbackData: data, id } };
     } catch {
         return {

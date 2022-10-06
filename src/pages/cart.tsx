@@ -19,11 +19,11 @@ const Cart: NextPage<PageProps> = ({ fallbackData }) => {
     );
 };
 
-export const getServerSideProps: GetServerSideProps<PageProps> = async () => {
+export const getServerSideProps: GetServerSideProps<PageProps> = async ({ req }) => {
     const apiEndpoint = buildLink(parameters.api.endpoints['cart.get']);
 
     try {
-        const data = await fetcher<definitions['CartItem'][]>(apiEndpoint);
+        const data = await fetcher<definitions['CartItem'][]>(apiEndpoint, undefined, req);
         return { props: { fallbackData: data } };
     } catch {
         return {

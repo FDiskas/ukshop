@@ -24,17 +24,17 @@ export const CartContainer: React.FC<Props> = ({ data }) => {
         fetcher(
             buildLink(parameters.api.endpoints['cart.item.update'], {
                 itemId: itemId?.toString(),
-                quantity: quantity?.toString(),
             }),
             {
-                method: 'put',
+                method: 'PUT',
+                body: JSON.stringify({ quantity }),
             }
         );
     }, []);
 
     return (
         <div className="container py-8 px-6 mx-auto font-normal">
-            <div className="flex flex-row items-center gap-5 border-b-2 mb-3">
+            <div className="flex flex-row items-center gap-5 mb-3">
                 <div className="w-44 hidden md:block">Image</div>
                 <div className="flex-1">Name</div>
                 <div className="w-16">Quantity</div>

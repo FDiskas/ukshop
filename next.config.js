@@ -7,6 +7,14 @@ const nextConfig = {
     images: {
         domains: ['upload.wikimedia.org', 'images.unsplash.com'],
     },
+    rewrites: () => {
+        return [
+            {
+                source: '/api/:path*',
+                destination: `${process.env.NEXT_PUBLIC_SHOP_API}/:path*`,
+            },
+        ];
+    },
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,

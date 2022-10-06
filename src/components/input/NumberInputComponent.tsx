@@ -9,27 +9,22 @@ export const NumberInputComponent: React.FC<Props> = ({ value = 0, onChange }) =
     const [number, setNumber] = useState(value);
 
     const addValue = React.useCallback(() => {
-        setNumber((latest_number) => {
-            const mew_number = isNaN(latest_number) ? 0 : latest_number + 1;
-            if (onChange) {
-                onChange(mew_number);
-            }
+        const latest_number = number + 1;
+        setNumber(latest_number);
 
-            return mew_number;
-        });
-    }, [onChange]);
+        if (onChange) {
+            onChange(latest_number);
+        }
+    }, [onChange, number]);
 
     const removeValue = React.useCallback(() => {
-        setNumber((latest_number) => {
-            const new_number = latest_number > 0 ? latest_number - 1 : 0;
+        const latest_number = number > 0 ? number - 1 : 0;
+        setNumber(latest_number);
 
-            if (onChange) {
-                onChange(new_number);
-            }
-
-            return new_number;
-        });
-    }, [onChange]);
+        if (onChange) {
+            onChange(latest_number);
+        }
+    }, [number, onChange]);
 
     return (
         <div className="flex flex-row h-10 w-full relative bg-transparent mt-1">
