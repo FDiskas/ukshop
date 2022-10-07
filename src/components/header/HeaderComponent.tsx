@@ -8,14 +8,9 @@ import BasketIcon from 'public/icons/basket.svg';
 import BurgerIcon from 'public/icons/burger.svg';
 
 import { CartQuickMenuComponent } from 'src/components/cart/CartQuickMenuComponent';
-import { definitions } from 'src/types/Api';
 import { useGetCart } from 'src/hooks/useGetCart';
 
-interface Props {
-    cartItems: definitions['CartItem'][];
-}
-
-export const HeaderComponent: React.FC<Props> = ({ cartItems }) => {
+export const HeaderComponent = () => {
     const { data } = useGetCart();
 
     return (
@@ -77,7 +72,7 @@ export const HeaderComponent: React.FC<Props> = ({ cartItems }) => {
                     <div>
                         <input className="absolute opacity-0" type="checkbox" id="cart-toggle" />
                         <div id="cart" className="opacity-0">
-                            <CartQuickMenuComponent data={cartItems} />
+                            {data && <CartQuickMenuComponent data={data} />}
                         </div>
                     </div>
                 </div>
