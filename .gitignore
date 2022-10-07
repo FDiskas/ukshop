@@ -33,7 +33,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 .eslintcache
 src/types/Api.d.ts
 coverage/
