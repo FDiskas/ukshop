@@ -24,12 +24,13 @@ export const ProductListContainer: React.FC<Props> = ({ data }) => {
                 method: 'POST',
                 body: JSON.stringify(data),
             }).then(() => {
-                document.getElementById('cart-toggle')?.focus();
+                document.getElementById('cart-toggle')?.click();
                 mutate(parameters.api.endpoints['cart.get']);
             });
         },
         [mutate]
     );
+
     return (
         <div className="mx-auto flex items-center flex-wrap pt-4 pb-12">
             {data.map((product) => (

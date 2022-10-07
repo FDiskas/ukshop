@@ -1,12 +1,16 @@
-import type { GetServerSideProps, NextPage } from 'next';
+import * as React from 'react';
+
+import { useSWRConfig } from 'swr';
 
 import { EmptyLayout } from 'src/layouts/EmptyLaout';
-import { definitions } from 'src/types/Api';
+import { definitions, operations } from 'src/types/Api';
 import { ProductItemContainer } from 'src/containers/products/ProductItemContainer';
 import { fetcher } from 'src/libs/fetcher';
 import { useGetProduct } from 'src/hooks/useGetProduct';
 import { parameters } from 'src/parameters';
 import { buildLink } from 'src/libs/builder';
+
+import type { GetServerSideProps, NextPage } from 'next';
 
 interface PageProps {
     fallbackData: definitions['ItemDetail'];
@@ -15,6 +19,23 @@ interface PageProps {
 
 const Product: NextPage<PageProps> = ({ fallbackData, id }) => {
     const { data } = useGetProduct({ id }, fallbackData);
+    const { mutate } = useSWRConfig();
+    const handleAddToCart = React.useCallback(
+        (id: number) => {
+            const data: operations['addItem']['parameters']['query'] = {
+                id,
+                quantity: 1,
+            };
+            fetcher(buildLink(parameters.api.endpoints['cart.item.add']), {
+                method: 'POST',
+                body: JSON.stringify(data),
+            }).then(() => {
+                document.getElementById('cart-toggle')?.click();
+                mutate(parameters.api.endpoints['cart.get']);
+            });
+        },
+        [mutate]
+    );
 
     return (
         <EmptyLayout>
@@ -26,6 +47,7 @@ const Product: NextPage<PageProps> = ({ fallbackData, id }) => {
                         description={data.description}
                         image={data.image}
                         price={data.price}
+                        onAddToCart={handleAddToCart}
                     />
                 )}
             </div>
