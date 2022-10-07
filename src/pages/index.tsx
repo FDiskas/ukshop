@@ -1,5 +1,3 @@
-import type { GetServerSideProps, NextPage } from 'next';
-
 import { ProductListContainer } from 'src/containers/products/ProductListContainer';
 import { useGetProducts } from 'src/hooks/useGetProducts';
 import { MainLayout } from 'src/layouts/MainLayout';
@@ -7,6 +5,8 @@ import { buildLink } from 'src/libs/builder';
 import { fetcher } from 'src/libs/fetcher';
 import { parameters } from 'src/parameters';
 import { definitions } from 'src/types/Api';
+
+import type { GetServerSideProps, NextPage } from 'next';
 
 interface PageProps {
     fallbackData: definitions['Item'][];

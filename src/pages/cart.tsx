@@ -1,11 +1,11 @@
-import type { GetServerSideProps, NextPage } from 'next';
-
 import { EmptyLayout } from 'src/layouts/EmptyLaout';
 import { CartContainer } from 'src/containers/cart/CartContainer';
 import { buildLink } from 'src/libs/builder';
 import { parameters } from 'src/parameters';
 import { definitions } from 'src/types/Api';
 import { fetcher } from 'src/libs/fetcher';
+
+import type { GetServerSideProps, NextPage } from 'next';
 
 interface PageProps {
     fallbackData: definitions['CartItem'][];
