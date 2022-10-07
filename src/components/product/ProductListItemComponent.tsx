@@ -22,6 +22,7 @@ interface Props {
     price: number;
     id: number;
     variant?: ProductListItemComponentVariant;
+    onAddToCart?: (itemId: number) => void;
 }
 
 export const ProductListItemComponent: React.FC<Props> = ({
@@ -30,11 +31,24 @@ export const ProductListItemComponent: React.FC<Props> = ({
     price,
     id,
     variant = ProductListItemComponentVariant.Small,
+    onAddToCart,
 }) => {
     const className =
         variant === ProductListItemComponentVariant.Small
             ? 'w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 flex flex-col'
             : 'w-full flex flex-col';
+
+    const handleAddToCart = React.useCallback(
+        (event: React.MouseEvent<HTMLButtonElement>) => {
+            event.stopPropagation();
+            event.preventDefault();
+
+            if (onAddToCart) {
+                onAddToCart(id);
+            }
+        },
+        [id, onAddToCart]
+    );
 
     return (
         <div className={className}>
@@ -53,7 +67,7 @@ export const ProductListItemComponent: React.FC<Props> = ({
                             />
                         </div>
                         <div className={`absolute bottom-5 left-0 right-0 opacity-0 ${styles.productButton}`}>
-                            <ButtonComponent>Add to cart</ButtonComponent>
+                            <ButtonComponent onClick={handleAddToCart}>Add to cart</ButtonComponent>
                         </div>
                     </div>
                     <div className="pt-3 flex items-center justify-between">

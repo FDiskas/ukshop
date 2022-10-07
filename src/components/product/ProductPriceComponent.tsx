@@ -10,5 +10,5 @@ export const ProductPriceComponent: React.FC<Props> = ({ price, className }) => 
         return null;
     }
 
-    return <p className={`pt-1 text-gray-900 ${className}`}>€{price}</p>;
+    return <span className={`pt-1 text-gray-900 ${className}`}>€{price}</span>;
 };

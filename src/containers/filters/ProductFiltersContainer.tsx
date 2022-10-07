@@ -12,7 +12,7 @@ export const ProductFiltersContainer = () => {
                     Mens
                 </a>
 
-                <div className="flex items-center" id="store-nav-content">
+                <div className="flex items-center">
                     <a className="pl-3 flex no-underline hover:text-black" href="#">
                         <FilterIcon width={24} height={24} />
                     </a>
